@@ -17,10 +17,22 @@ async def pdfexcel(file:UploadFile = File(...)):
         }
     elif name.endswith(".pdf"):
         pdf=PdfReader(io.BytesIO(content))
-        text = "".join([p.extract_text() or "" for p in pdf.pages])
+        text = "".join([p.extract_text() or "" for p in pdf.pages[:2]])
         return{
             "type":"pdf",
             "preview":text.strip()[:200]
         }
 
     return {"error": "unsupported file"}    
+
+
+
+@app.post("/pdf/")
+async def pdf(file:UploadFile=File(...)):
+    content=await file.read()
+    pdf=PdfReader(io.BytesIO(content))
+    text=" ".join([p.extract_text() or "" for p in pdf.pages])
+    return{
+        "type":"pdf",
+        "preview":text.strip()[:200]
+    }

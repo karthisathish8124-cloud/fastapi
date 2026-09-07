@@ -5,6 +5,8 @@ import io
 
 app = FastAPI()
 
+#pdf and excel
+
 @app.post("/pdfandexcel")
 async def pdfexcel(file:UploadFile = File(...)):
     content=await file.read()

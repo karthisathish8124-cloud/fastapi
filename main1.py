@@ -26,6 +26,8 @@ async def pdfexcel(file:UploadFile = File(...)):
     return {"error": "unsupported file"}    
 
 
+#pdf upload
+
 
 @app.post("/pdf/")
 async def pdf(file:UploadFile=File(...)):
@@ -36,3 +38,4 @@ async def pdf(file:UploadFile=File(...)):
         "type":"pdf",
         "preview":text.strip()[:200]
     }
+   

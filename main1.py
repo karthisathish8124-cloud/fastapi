@@ -5,7 +5,7 @@ import io
 
 app = FastAPI()
 
-#pdf and excel
+#pdf and excel file
 
 @app.post("/pdfandexcel")
 async def pdfexcel(file:UploadFile = File(...)):

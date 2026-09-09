@@ -18,7 +18,7 @@ class item(BaseModel):
 
 app = FastAPI()
 
-
+#pdfS
 def custom_openapi():
     if app.openapi_schema:
         return app.openapi_schema

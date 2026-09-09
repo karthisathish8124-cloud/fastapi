@@ -27,8 +27,8 @@ async def pdfexcel(file:UploadFile = File(...)):
 
     return {"error": "unsupported file"}    
 
-
-#pdf upload files new change
+ 
+#pdf upload files new change done
 
 
 @app.post("/pdf/")

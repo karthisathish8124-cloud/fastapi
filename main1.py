@@ -40,4 +40,7 @@ async def pdf(file:UploadFile=File(...)):
         "type":"pdf",
         "preview":text.strip()[:200]
     }
-   
+
+
+    
+   #new push

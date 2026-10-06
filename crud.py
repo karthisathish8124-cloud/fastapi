@@ -1,10 +1,8 @@
-from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
+
 import sqlite3
 
-app = FastAPI()
 
-con = sqlite3.connect("test.db", check_same_thread=False)
+con = sqlite3.connect("items.db", check_same_thread=False)
 cursor = con.cursor()
 cursor.execute("""
     CREATE TABLE IF NOT EXISTS items (
